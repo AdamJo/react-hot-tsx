@@ -1,7 +1,11 @@
-build
+dist
 node_modules
 stats.json
 
 .DS_Store
 npm-debug.log
 .idea
+
+.storybook
+stories
+storybook-static

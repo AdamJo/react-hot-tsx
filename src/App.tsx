@@ -18,20 +18,21 @@ const BUTTON = styled.button`
   &:hover {
     background: #A4C175;
     color: $fff;
-  }
-`
+  };
+`;
+
 const WRAPPER = styled.div`
   display: flex; 
   justify-content: space-around;
   flex-direction: row;
   width: 300px;
-`
+`;
 
 const COUNTER = styled.div`
   font-size: 45px;
   text-align: center;
   width: 50px;
-`
+`;
 
 export class App extends React.Component<void, any> {
   private counter: number;
@@ -40,7 +41,6 @@ export class App extends React.Component<void, any> {
 
     this.increment = this.increment.bind(this);
     this.decrement = this.decrement.bind(this);
-
     this.state = { counter: 0};
   }
 
@@ -60,11 +60,11 @@ export class App extends React.Component<void, any> {
     return (
       <DIV>
         <WRAPPER>
-          <BUTTON onClick={() => this.decrement()}>
+          <BUTTON onClick={this.decrement}>
           -
           </BUTTON>
           <COUNTER>{this.state.counter}</COUNTER>
-          <BUTTON onClick={() => this.increment()}>+</BUTTON>
+          <BUTTON onClick={this.increment}>+</BUTTON>
         </WRAPPER>
       </DIV>  
     );

@@ -5,11 +5,15 @@
   "main": "index.js",
   "scripts": {
     "build": "webpack --env production",
-    "start": "webpack-dev-server --env development"
+    "start": "webpack-dev-server --env development",
+    "storybook": "start-storybook -p 9001 -c .storybook",
+    "build-storybook": "build-storybook",
+    "lint": "tslint \"src/**/*.tsx\""
   },
   "author": "",
   "license": "ISC",
   "devDependencies": {
+    "@kadira/storybook": "^2.35.3",
     "@types/react": "^15.0.2",
     "@types/react-dom": "^0.14.21",
     "@types/react-hot-loader": "^3.0.1",
@@ -25,8 +29,11 @@
     "html-webpack-plugin": "^2.26.0",
     "html-webpack-template": "^6.0.0",
     "http-server": "^0.9.0",
+    "jest": "^18.1.0",
     "node": "^0.0.0",
+    "tslint": "^4.4.0",
     "tslint-loader": "^3.3.0",
+    "tslint-react": "^2.3.0",
     "typescript": "^2.1.5",
     "webpack": "beta",
     "webpack-dev-middleware": "^1.9.0",

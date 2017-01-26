@@ -1,4 +1,5 @@
 {
+  "extends": ["tslint:latest", "tslint-react"],
   "rules": {
     "class-name": true,
     "comment-format": [true, "check-space"],
@@ -7,7 +8,6 @@
     "forin": true,
     "indent": [true, "spaces"],
     "label-position": true,
-    "label-undefined": true,
     "no-arg": true,
     "no-bitwise": true,
     "no-console": [true,
@@ -18,9 +18,9 @@
       "timeEnd",
       "trace"
     ],
+    "member-access": false,
     "no-construct": true,
     "no-debugger": true,
-    "no-duplicate-key": true,
     "no-duplicate-variable": true,
     "no-empty": false,
     "no-eval": true,
@@ -30,8 +30,6 @@
     "trailing-comma": false,
     "no-trailing-whitespace": false,
     "no-unused-expression": true,
-    "no-unused-variable": false,
-    "no-unreachable": true,
     "no-use-before-declare": false,
     "no-var-keyword": true,
     "one-line": [true,
@@ -43,7 +41,6 @@
     "radix": true,
     "semicolon": true,
     "triple-equals": [true, "allow-null-check"],
-    "use-strict": true,
     "variable-name": "allow-leading-underscore",
     "whitespace": [true,
       "check-branch",

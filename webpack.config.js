@@ -37,7 +37,8 @@ module.exports = function(env) {
       parts.extractBundles([
         { name: 'vendor', entries: [ 'react' ] },
         { name: 'manifest' }
-      ])
+      ]),
+      parts.lintTypescript({ paths: PATHS.src })
     ]);
   } else {
     config = merge([

@@ -178,7 +178,7 @@ exports.loadJavaScript = function(paths) {
   };
 };
 
-exports.typescript = function(path, reactHotLoader = false) {
+exports.loadTypescript = function(path, reactHotLoader = false) {
   let loaders = [ 'awesome-typescript-loader' ];
 
   if (reactHotLoader) {
@@ -210,4 +210,34 @@ exports.setFreeVariable = function(key, value) {
   env[key] = JSON.stringify(value);
 
   return { plugins: [ new webpack.DefinePlugin(env) ] };
+};
+
+// exports.lintJavaScript = function({ paths, options }) {
+//   return {
+//     module: {
+//       rules: [
+//         {
+//           test: /\.jsx$/,
+//           include: paths,
+//           enforce: 'pre',
+//           loader: 'eslint-loader',
+//           options: options
+//         }
+//       ]
+//     }
+//   };
+// };
+exports.lintTypescript = function({ paths, options }) {
+  return {
+    module: {
+      rules: [
+        {
+          test: /\.tsx$/,
+          include: paths,
+          enforce: 'pre',
+          loader: 'tslint-loader'
+        }
+      ]
+    }
+  };
 };
