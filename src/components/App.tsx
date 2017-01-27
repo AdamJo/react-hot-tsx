@@ -1,16 +1,16 @@
 import * as React from 'react';
 import styled from 'styled-components';
 
-const DIV = styled.div`
+export const DIV = styled.div`
   display: flex;
   justify-content: center;
   align-items: center;
 
   width: 100%;
-  height: 60vw;
+  height: 60vh;
 `;
 
-const BUTTON = styled.button`
+export const BUTTON = styled.button`
   width: 50px;
   height: 50px;
   outline: none;
@@ -21,14 +21,14 @@ const BUTTON = styled.button`
   };
 `;
 
-const WRAPPER = styled.div`
+export const WRAPPER = styled.div`
   display: flex; 
   justify-content: space-around;
   flex-direction: row;
   width: 300px;
 `;
 
-const COUNTER = styled.div`
+export const COUNTER = styled.div`
   font-size: 45px;
   text-align: center;
   width: 50px;

@@ -5,10 +5,10 @@
   "main": "index.js",
   "scripts": {
     "build": "webpack --env production",
-    "start": "webpack-dev-server --env development",
+    "start": "webpack-dev-server --env development --open",
     "storybook": "start-storybook -p 9001 -c .storybook",
     "build-storybook": "build-storybook",
-    "lint": "tslint \"src/**/*.tsx\""
+    "lint": "tslint src/**/*.tsx"
   },
   "author": "",
   "license": "ISC",

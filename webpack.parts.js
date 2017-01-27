@@ -25,9 +25,8 @@ exports.devServer = function(options) {
       historyApiFallback: true,
       hot: true,
       // stats: 'errors-only',
-      // host: options.host,
-      // Defaults to `localhost`
-      // Defaults to 8080
+      host: options.host,
+      port: options.port,
       contentBase: 'src'
     },
     plugins: [ new webpack.HotModuleReplacementPlugin({}) ]
@@ -112,7 +111,6 @@ exports.extractCSS = function(paths) {
 };
 
 exports.lintCSS = function(paths, rules) {
-  console.log(paths, rules);
   return {
     module: {
       rules: [
@@ -126,7 +124,7 @@ exports.lintCSS = function(paths, rules) {
             plugins: function() {
               return [
                 require('stylelint')({
-                  rules: rules,
+                  rules: { rules },
                   // Ignore node_modules CSS
                   ignoreFiles: 'node_modules/**/*.css'
                 })
@@ -184,7 +182,7 @@ exports.loadTypescript = function(path, reactHotLoader = false) {
   if (reactHotLoader) {
     loaders.unshift('react-hot-loader/webpack');
   }
-  console.log(loaders);
+
   return {
     module: { rules: [ { test: /\.tsx$/, include: path, loaders: loaders } ] }
   };
@@ -212,21 +210,6 @@ exports.setFreeVariable = function(key, value) {
   return { plugins: [ new webpack.DefinePlugin(env) ] };
 };
 
-// exports.lintJavaScript = function({ paths, options }) {
-//   return {
-//     module: {
-//       rules: [
-//         {
-//           test: /\.jsx$/,
-//           include: paths,
-//           enforce: 'pre',
-//           loader: 'eslint-loader',
-//           options: options
-//         }
-//       ]
-//     }
-//   };
-// };
 exports.lintTypescript = function({ paths, options }) {
   return {
     module: {

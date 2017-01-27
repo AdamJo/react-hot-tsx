@@ -11,7 +11,7 @@ const PATHS = {
 const common = merge([
   {
     output: { path: PATHS.dist, filename: '[name].js' },
-    resolve: { extensions: [ '.ts', '.tsx', '.js' ] }
+    resolve: { extensions: [ '.ts', '.tsx' ] }
   },
   parts.generateIndexHTML()
 ]);
