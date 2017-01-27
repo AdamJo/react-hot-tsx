@@ -6,6 +6,5 @@ stats.json
 npm-debug.log
 .idea
 
-.storybook
 stories
 storybook-static
