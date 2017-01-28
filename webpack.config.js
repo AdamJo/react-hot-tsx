@@ -11,7 +11,10 @@ const PATHS = {
 const common = merge([
   {
     output: { path: PATHS.dist, filename: '[name].js' },
-    resolve: { extensions: [ '.ts', '.tsx' ] }
+    resolve: {
+      alias: { Components: path.resolve(__dirname, 'src/components/') },
+      extensions: [ '.js', '.ts', '.tsx' ]
+    }
   },
   parts.generateIndexHTML()
 ]);
@@ -34,11 +37,11 @@ module.exports = function(env) {
       parts.generateSourcemaps('source-map'),
       parts.clean(PATHS.dist),
       parts.minifyJavaScript({ useSourceMap: true }),
+      // parts.lintTypescript({ paths: PATHS.src }),
       parts.extractBundles([
         { name: 'vendor', entries: [ 'react' ] },
         { name: 'manifest' }
-      ]),
-      parts.lintTypescript({ paths: PATHS.src })
+      ])
     ]);
   } else {
     config = merge([

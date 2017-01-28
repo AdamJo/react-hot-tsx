@@ -184,7 +184,16 @@ exports.loadTypescript = function(path, reactHotLoader = false) {
   }
 
   return {
-    module: { rules: [ { test: /\.tsx$/, include: path, loaders: loaders } ] }
+    module: {
+      rules: [
+        {
+          test: /\.tsx$/,
+          include: path,
+          use: loaders,
+          exclude: [ /\.(spec|e2e|d)\.tsx$/ ]
+        }
+      ]
+    }
   };
 };
 

@@ -1,38 +1,10 @@
 import * as React from 'react';
 import styled from 'styled-components';
 
-export const DIV = styled.div`
-  display: flex;
-  justify-content: center;
-  align-items: center;
-
-  width: 100%;
-  height: 60vh;
-`;
-
-export const BUTTON = styled.button`
-  width: 50px;
-  height: 50px;
-  outline: none;
-  border: none;
-  &:hover {
-    background: #A4C175;
-    color: $fff;
-  };
-`;
-
-export const WRAPPER = styled.div`
-  display: flex; 
-  justify-content: space-around;
-  flex-direction: row;
-  width: 300px;
-`;
-
-export const COUNTER = styled.div`
-  font-size: 45px;
-  text-align: center;
-  width: 50px;
-`;
+import Button from './Button';
+import Div from './Div';
+import Wrapper from './Wrapper';
+import Couter from './Counter';
 
 export class App extends React.Component<void, any> {
   private counter: number;
@@ -58,15 +30,15 @@ export class App extends React.Component<void, any> {
 
   render() {
     return (
-      <DIV>
-        <WRAPPER>
-          <BUTTON onClick={this.decrement}>
+      <Div>
+        <Wrapper>
+          <Button onClick={this.decrement}>
           -
-          </BUTTON>
-          <COUNTER>{this.state.counter}</COUNTER>
-          <BUTTON onClick={this.increment}>+</BUTTON>
-        </WRAPPER>
-      </DIV>  
+          </Button>
+          <Couter>{this.state.counter}</Couter>
+          <Button onClick={this.increment}>+</Button>
+        </Wrapper>
+      </Div>  
     );
   }
 }

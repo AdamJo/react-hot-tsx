@@ -1,6 +1,7 @@
 dist
 node_modules
 stats.json
+coverage
 
 .DS_Store
 npm-debug.log
@@ -8,3 +9,4 @@ npm-debug.log
 
 stories
 storybook-static
+.storybook

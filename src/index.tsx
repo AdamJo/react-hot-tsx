@@ -20,8 +20,8 @@ const renderApp = () => (
 render(renderApp(), root);
 
 if (module.hot) {
-  module.hot.accept('./App', () => {
-    require('./App');
+  module.hot.accept('./components/App', () => {
+    require('./components/App');
     render(renderApp(), root);
   });
 }

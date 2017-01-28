@@ -5,15 +5,36 @@
   "main": "index.js",
   "scripts": {
     "build": "webpack --env production",
+    "build:dev": "webpack --env development",
     "start": "webpack-dev-server --env development --open",
     "storybook": "start-storybook -p 9001 -c .storybook",
     "build-storybook": "build-storybook",
-    "lint": "tslint src/**/*.tsx"
+    "lint": "tslint src/**/*.tsx",
+    "test": "jest --coverage",
+    "test:clean": "rimraf ./coverage"
+  },
+  "jest": {
+    "moduleFileExtensions": [
+      "ts",
+      "tsx",
+      "js"
+    ],
+    "collectCoverageFrom": [
+      "src/components/**/*.{tsx}",
+      "!src/**/*.test.{tsx}",
+      "!src/**/*.stories.{tsx}"
+    ],
+    "transform": {
+      ".(ts|tsx)": "<rootDir>/node_modules/ts-jest/preprocessor.js"
+    },
+    "testRegex": ".*\\.spec\\.tsx$"
   },
   "author": "",
   "license": "ISC",
   "devDependencies": {
     "@kadira/storybook": "^2.35.3",
+    "@types/enzyme": "^2.7.2",
+    "@types/jest": "^16.0.4",
     "@types/react": "^15.0.2",
     "@types/react-dom": "^0.14.21",
     "@types/react-hot-loader": "^3.0.1",
@@ -26,11 +47,16 @@
     "babel-preset-react": "^6.22.0",
     "clean-webpack-plugin": "^0.1.15",
     "cross-env": "^3.1.4",
+    "enzyme": "^2.7.1",
     "html-webpack-plugin": "^2.26.0",
     "html-webpack-template": "^6.0.0",
     "http-server": "^0.9.0",
     "jest": "^18.1.0",
+    "jest-enzyme": "^2.1.0",
     "node": "^0.0.0",
+    "react-addons-test-utils": "^15.4.2",
+    "react-test-renderer": "^15.4.2",
+    "ts-jest": "^18.0.2",
     "tslint": "^4.4.0",
     "tslint-loader": "^3.3.0",
     "tslint-react": "^2.3.0",
