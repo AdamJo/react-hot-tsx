@@ -11,7 +11,7 @@ describe('App', () => {
   });
 
   describe('handle counter state', () => {
-    let app = renderIntoDocument(<App />);
+    const app = renderIntoDocument(<App />);
 
     it('should start at 0', () => {
       const expected = 0;

@@ -1,9 +1,5 @@
 const webpack = require('webpack');
-
-// const ExtractTextPlugin = require('extract-text-webpack-plugin');
-// const PurifyCSSPlugin = require('purifycss-webpack-plugin');
 const CleanWebpackPlugin = require('clean-webpack-plugin');
-
 const HtmlWebpackPlugin = require('html-webpack-plugin');
 
 exports.generateIndexHTML = function(options) {
