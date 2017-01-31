@@ -13,6 +13,17 @@
     "test": "jest --coverage",
     "test:clean": "rimraf ./coverage"
   },
+  "repository": {
+    "type": "git",
+    "url": "https://github.com/AdamJo/react-hot-tsx.git"
+  },
+  "keywords": [
+    "react",
+    "reactjs",
+    "boilerplate",
+    "typescript",
+    "react-hot-loader"
+  ],
   "jest": {
     "moduleFileExtensions": [
       "ts",
